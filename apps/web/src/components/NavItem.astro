@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import clsx from "clsx";
+
+export interface Props extends HTMLAttributes<"a"> {
+  name: string;
+  href: string;
+}
+
+const { name, href } = Astro.props;
+---
+
+<a
+  {...Astro.props}
+  href={href}
+  class={clsx(
+    "transition-all hover:text-neutral-800 dark:hover:text-neutral-100 flex align-middle",
+    {
+      "text-neutral-400": Astro.url.pathname !== href,
+    }
+  )}
+>
+  <span class="relative py-1 px-2">
+    {name}
+  </span>
+</a>

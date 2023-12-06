@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/resume",
+      "destination": "/Eric_Minassian_resume.pdf",
+      "permanent": true
+    }
+  ]
+}

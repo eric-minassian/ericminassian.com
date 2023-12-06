@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import UCILogo from "../assets/uci.svg";
+import WalmartLogo from "../assets/walmart.webp";
+import Badge from "../components/Badge.astro";
+import Link from "../components/Link.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section>
+    <h1 class="font-semibold text-2xl mb-8 tracking-tighter">
+      hey, I'm eric 👋
+    </h1>
+    <p class="prose prose-neutral dark:prose-invert">
+      {
+        `I'm a Computer Science + Business Administration student
+      at the  `
+      }
+      <Badge href="https://uci.edu">
+        <Image src={UCILogo} alt="UCI Logo" class="!mr-1 w-5 h-5" />
+         University of California, Irvine
+      </Badge>
+      {`. I'm currently interning at `}
+      <Badge href="https://tech.walmart.com">
+        <Image
+          src={WalmartLogo}
+          alt="Walmart Global Tech Logo"
+          class="!mr-1 w-5 h-5"
+        />
+         Walmart Global Tech
+      </Badge>
+      {` as a Software Engineer II.`}
+    </p>
+    <div
+      class="my-8 flex flex-col sm:flex-row space-x-0 sm:space-x-4 space-y-4 sm:space-y-0 w-full"
+    >
+      <ul
+        class="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300"
+      >
+        <li>
+          <Link href="https://linkedin.com/in/minassian-eric">linkedin</Link>
+        </li>
+        <li>
+          <Link href="/Eric_Minassian_resume.pdf">resume</Link>
+        </li>
+        <li>
+          <Link href="https://github.com/eric-minassian">github</Link>
+        </li>
+        <li>
+          <Link href="mailto:eric@ericminassian.com">email</Link>
+        </li>
+      </ul>
+    </div>
+  </section>
+</Layout>

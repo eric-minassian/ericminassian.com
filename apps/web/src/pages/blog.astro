@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const allPosts = await Astro.glob("../pages/blog/*.md");
+---
+
+<Layout title="Blog - Eric Minassian">
+  <section>
+    <h1 class="font-semibold text-2xl mb-8 tracking-tighter">
+      read my thoughts
+    </h1>
+    <ul>
+      {
+        allPosts.map((post) => (
+          <li>
+            <a class="flex flex-col space-y-1 mb-4" href={post.url}>
+              <div class="w-full flex flex-col">
+                <p class="text-neutral-900 dark:text-neutral-100 tracking-tight">
+                  {post.frontmatter.title}
+                </p>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  {post.frontmatter.description}
+                </p>{" "}
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

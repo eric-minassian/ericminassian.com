@@ -1,0 +1,59 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const title = Astro.props.title ?? "Eric Minassian";
+const description =
+  Astro.props.description ??
+  "CS + Business Administration student at the University of California, Irvine. Software Engineer Intern at Walmart.";
+---
+
+<!doctype html>
+<html lang="en" class={"text-black bg-white dark:text-white dark:bg-[#111010]"}>
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Eric Minassian" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Facebook -->
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/icon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:domain" content={Astro.url.host} />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/icon.png" />
+
+    <!-- SEO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111010" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <ViewTransitions />
+  </head>
+
+  <body
+    class="antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto"
+  >
+    <main class="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      <Navbar />
+      <slot />
+    </main>
+  </body>
+</html>
