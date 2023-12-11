@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "prepare": "husky install",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
