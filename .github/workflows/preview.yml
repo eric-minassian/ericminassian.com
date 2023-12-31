@@ -1,0 +1,16 @@
+name: Preview Deployment
+
+on:
+  push:
+    branches-ignore:
+      - main
+jobs:
+  deploy-web:
+    name: Deploy Web Preview
+    uses: ./.github/workflows/previews/web.yml
+    secrets: inherit
+
+  deploy-api:
+    name: Deploy API Preview
+    uses: ./.github/workflows/previews/api.yml
+    secrets: inherit

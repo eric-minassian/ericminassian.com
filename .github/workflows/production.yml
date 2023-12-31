@@ -1,0 +1,16 @@
+name: Production Deployment
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy-web:
+    name: Deploy Web Production
+    uses: ./.github/workflows/productions/web.yml
+    secrets: inherit
+
+  deploy-api:
+    name: Deploy API Production
+    uses: ./.github/workflows/productions/api.yml
+    secrets: inherit
