@@ -5,6 +5,11 @@ env:
 
 on:
   workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+        description: The environment to deploy to.
 
 jobs:
   deploy:
