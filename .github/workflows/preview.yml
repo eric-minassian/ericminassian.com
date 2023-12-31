@@ -7,14 +7,14 @@ on:
 jobs:
   deploy-web:
     name: Deploy Web Preview
-    uses: ./.github/workflows/previews/web.yml
+    uses: ./.github/workflows/deploy-web.yml
     with:
       environment: preview
     secrets: inherit
 
   deploy-api:
     name: Deploy API Preview
-    uses: ./.github/workflows/previews/api.yml
+    uses: ./.github/workflows/deploy-api.yml
     with:
       environment: preview
     secrets: inherit

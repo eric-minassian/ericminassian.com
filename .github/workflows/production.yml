@@ -7,14 +7,14 @@ on:
 jobs:
   deploy-web:
     name: Deploy Web Production
-    uses: ./.github/workflows/productions/web.yml
+    uses: ./.github/workflows/deploy-web.yml
     with:
       environment: production
     secrets: inherit
 
   deploy-api:
     name: Deploy API Production
-    uses: ./.github/workflows/productions/api.yml
+    uses: ./.github/workflows/deploy-api.yml
     with:
       environment: production
     secrets: inherit
