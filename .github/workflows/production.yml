@@ -8,9 +8,13 @@ jobs:
   deploy-web:
     name: Deploy Web Production
     uses: ./.github/workflows/productions/web.yml
+    with:
+      environment: production
     secrets: inherit
 
   deploy-api:
     name: Deploy API Production
     uses: ./.github/workflows/productions/api.yml
+    with:
+      environment: production
     secrets: inherit

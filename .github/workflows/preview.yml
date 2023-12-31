@@ -8,9 +8,13 @@ jobs:
   deploy-web:
     name: Deploy Web Preview
     uses: ./.github/workflows/previews/web.yml
+    with:
+      environment: preview
     secrets: inherit
 
   deploy-api:
     name: Deploy API Preview
     uses: ./.github/workflows/previews/api.yml
+    with:
+      environment: preview
     secrets: inherit
